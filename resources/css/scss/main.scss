@@ -1,0 +1,94 @@
+// reponsive
+$breakpoint-tn: 415px;
+$breakpoint-sm: 601px;
+$breakpoint-md: 769px;
+$breakpoint-lg: 1025px;
+$breakpoint-xl: 1201px;
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == tiny {
+        @media (max-width: $breakpoint-tn) { @content; }
+    } @else if $breakpoint == small {
+        @media (max-width: $breakpoint-sm) { @content; }
+    } @else if $breakpoint == medium {
+        @media (max-width: $breakpoint-md) { @content; }
+    } @else if $breakpoint == large {
+        @media (max-width: $breakpoint-lg) { @content; }
+    } @else if $breakpoint == xlarge {
+        @media (max-width: $breakpoint-xl) { @content; }
+    }
+}
+body{
+    font-family: 'Arial', sans-serif;
+    background-image: url(../../../public/images/photo-1715586042479-256282ff3cc9.webp);
+}
+#app{
+    header{
+        text-align: center;
+        padding: 20px 0;
+    }
+    footer{
+        text-align: center;
+    }
+}
+.panel__todo{
+    .card{
+        background: #f1f2f4;
+    }
+    .heading-2{
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .panel__todo--box{
+        position: relative;
+        .btn-add{
+            border-radius: 100%;
+            position: absolute;
+            right: 0;
+            top: 0px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+        
+    }
+    .task-item{
+        background-color: white;
+        padding: 8px 12px 4px;
+        border-radius: 8px;
+        box-shadow: var( 0px 1px 1px #091e4240, 0px 0px 1px #091e424f);
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        .btn-delete{
+            background: white;
+            border: none;
+            outline: none;
+            float: right;
+        }
+        .btn-update{
+            background: white;
+            border: none;
+            outline: none;
+            float: right;
+        }
+        input{
+            margin-right: 10px;
+        }
+        &:not(:last-child){
+            margin-bottom: 10px;
+        }
+        &.done{
+            border: 2px solid #198754;
+            padding-right: calc(1.5em + .75rem);
+            background-image: url(../../../public/images/download.svg);
+            background-repeat: no-repeat;
+            background-position: right calc(.375em + .1875rem) center;
+            background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+        }
+    }
+    
+}
